@@ -16,25 +16,29 @@
 
     </style>
     <center>
-        <h5>Laporan 10 Top Product Terjual</h4>
+        <h5>Laporan Product</h4>
     </center>
 
     <table class='table table-bordered table-sm'>
         <thead>
             <tr>
                 <th>#</th>
+                <th>Kategori</th>
                 <th>Nama Product</th>
-                <th>Jumlah Product</th>
+                <th>Harga</th>
+                <th>Promo</th>
+                {{-- <th>Opsi</th> --}}
             </tr>
         </thead>
         <tbody>
-            @php $no=1 @endphp
-            @foreach ($topproduct as $p)
+            @php $i=1 @endphp
+            @foreach ($product as $p)
                 <tr>
-                    <td>{{ $no++ }}</td>
+                    <td>{{ $i++ }}</td>
+                    <td>{{ $p->name }}</td>
                     <td>{{ $p->product_name }}</td>
-                    <td>{{ $p->sum }}</td>
-                </tr>
+                    <td>{{ number_format($p->price_agent,0,',','.') }}</td>
+                    <td>{{ $p->price_promo }}</td>
             @endforeach
         </tbody>
     </table>

@@ -16,24 +16,32 @@
 
     </style>
     <center>
-        <h5>Laporan 10 Top Product Terjual</h4>
+        <h5>Laporan Total</h4>
     </center>
 
     <table class='table table-bordered table-sm'>
         <thead>
             <tr>
                 <th>#</th>
-                <th>Nama Product</th>
-                <th>Jumlah Product</th>
+                <th>Order</th>
+                <th>Item</th>
+                <th>Qty</th>
+                <th>Ongkir</th>
+                <th>Diskon</th>
+                <th>Pembayaran</th>
             </tr>
         </thead>
         <tbody>
             @php $no=1 @endphp
-            @foreach ($topproduct as $p)
+            @foreach ($laptotal as $p)
                 <tr>
                     <td>{{ $no++ }}</td>
-                    <td>{{ $p->product_name }}</td>
-                    <td>{{ $p->sum }}</td>
+                    <td>{{ number_format($p->totalorder,0,',','.') }}</td>
+                    <td>{{ number_format($p->totalitem,0,',','.') }}</td>
+                    <td>{{ number_format($p->qty,0,',','.') }}</td>
+                    <td>{{ number_format($p->ongkir,0,',','.') }}</td>
+                    <td>{{ number_format($p->diskon,0,',','.') }}</td>
+                    <td>{{ number_format($p->pembayaran,0,',','.') }}</td>
                 </tr>
             @endforeach
         </tbody>

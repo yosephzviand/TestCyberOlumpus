@@ -16,24 +16,24 @@
 
     </style>
     <center>
-        <h5>Laporan 10 Top Product Terjual</h4>
+        <h5>Laporan Order Agent</h4>
     </center>
 
     <table class='table table-bordered table-sm'>
         <thead>
             <tr>
                 <th>#</th>
-                <th>Nama Product</th>
-                <th>Jumlah Product</th>
+                <th>Nama Agen</th>
+                <th>Jumlah</th>
             </tr>
         </thead>
         <tbody>
             @php $no=1 @endphp
-            @foreach ($topproduct as $p)
+            @foreach ($laporderagent as $p)
                 <tr>
                     <td>{{ $no++ }}</td>
-                    <td>{{ $p->product_name }}</td>
-                    <td>{{ $p->sum }}</td>
+                    <td>{{ $p->store_name }}</td>
+                    <td>{{ number_format($p->jumlah, 0, ',', '.') }}</td>
                 </tr>
             @endforeach
         </tbody>

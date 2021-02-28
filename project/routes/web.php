@@ -29,3 +29,16 @@ Route::get('/laporan/topagent', 'HomeController@laporantopagent')->name('laporan
 Route::get('/laporan/topcustomer', 'HomeController@laporantopcustomer')->name('laporantopcustomer');
 Route::get('/laporan/topproduct', 'HomeController@laporantopproduct')->name('laporantopproduct');
 Route::get('/laporan/jualkategori', 'HomeController@laporanjualkategori')->name('laporanjualkategori');
+Route::get('/laporan/total', 'HomeController@laporantotal')->name('laporantotal');
+Route::get('/laporan/order', 'HomeController@laporanorder')->name('laporanorder');
+Route::get('/laporan/agent', 'HomeController@laporanorderagent')->name('laporanorderagent');
+Route::get('/laporan/untung', 'HomeController@laporanuntungproses')->name('laporanuntungproses');
+Route::get('/laporan/item', 'HomeController@laporanitem')->name('laporanitem');
+Route::get('/laporan/users', 'HomeController@laporanusers')->name('laporanusers');
+Route::get('/laporan/product', 'HomeController@laporanproduct')->name('laporanproduct');
+Route::get('/laporan/orders', 'HomeController@laproranorders')->name('laproranorders');
+
+Route::post('/laporan/total/proses', 'HomeController@laporantotalproses')->name('laporantotalproses');
+Route::post('/laporan/order/proses', 'HomeController@laporanorderproses')->name('laporanorderproses');
+Route::post('/laporan/agent/proses', 'HomeController@laporanorderagentproses')->name('laporanorderagentproses');
+Route::post('/laporan/item/proses', 'HomeController@laporanitemproses')->name('laporanitemproses');

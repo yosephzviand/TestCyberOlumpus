@@ -16,7 +16,7 @@
 
     </style>
     <center>
-        <h5>Laporan 10 Top Product Terjual</h4>
+        <h5>Laporan Keuntungan Penjualan Item</h4>
     </center>
 
     <table class='table table-bordered table-sm'>
@@ -24,16 +24,18 @@
             <tr>
                 <th>#</th>
                 <th>Nama Product</th>
-                <th>Jumlah Product</th>
+                <th>Jumlah</th>
+                <th>Harga</th>
             </tr>
         </thead>
         <tbody>
             @php $no=1 @endphp
-            @foreach ($topproduct as $p)
+            @foreach ($lapitem as $p)
                 <tr>
                     <td>{{ $no++ }}</td>
                     <td>{{ $p->product_name }}</td>
-                    <td>{{ $p->sum }}</td>
+                    <td>{{ number_format($p->jumlah, 0, ',', '.') }}</td>
+                    <td>{{ number_format($p->total, 0, ',', '.') }}</td>
                 </tr>
             @endforeach
         </tbody>
